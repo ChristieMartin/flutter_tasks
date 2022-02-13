@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class ListProvider with ChangeNotifier {
   List<RssItem> favouriteNews = [];
 
-  void addItem(RssItem item) {
+  void addOrDeleteItem(RssItem item) {
     int index = indexRssItem(item);
     if (index != -1) {
       favouriteNews.removeAt(index);

@@ -1,10 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:dart_rss/domain/rss_feed.dart';
 import 'package:dart_rss/domain/rss_item.dart';
 import 'package:meta/meta.dart';
-import 'package:http/http.dart' as http;
 import 'package:rss_news/service/rss_api.dart';
-import 'package:rss_news/shared/constants.dart';
 
 part 'recent_news_state.dart';
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:rss_news/pages/recent_news/recent_news.dart';
 import 'package:rss_news/pages/wrapper.dart';
 import 'package:rss_news/shared/constants.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';

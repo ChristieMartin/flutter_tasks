@@ -1,4 +1,3 @@
-import 'package:dart_rss/domain/rss_item.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rss_news/shared/list_provider.dart';

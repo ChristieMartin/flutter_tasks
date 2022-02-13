@@ -5,7 +5,6 @@ import 'package:rss_news/service/exceptions.dart';
 
 abstract class RssApi {
   static const String _baseUrl = 'https://lenta.ru/rss';
-  final http.Client _client = http.Client();
 
   Future<List<RssItem>> fetchNews();
 }

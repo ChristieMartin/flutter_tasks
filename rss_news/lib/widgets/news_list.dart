@@ -37,7 +37,7 @@ Widget _itemWidget(BuildContext context, RssItem item, ListProvider provider) {
               margin: EdgeInsets.only(right: 3.w),
               child: GestureDetector(
                   onTap: () {
-                    provider.addItem(item);
+                    provider.addOrDeleteItem(item);
                   },
                   child: Icon(
                       provider.indexRssItem(item) != -1
