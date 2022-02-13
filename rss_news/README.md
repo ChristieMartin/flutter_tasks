@@ -1,16 +1,12 @@
-# rss_news
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Написать приложение отображающее RSS ленту сайта (источник на выбор). Приложение должно содержать два экрана: список элементов ленты, которые можно добавить в избранное и экран сохранённых элементов. На экране сохранённых элементов должна быть возможность удалять элементы. Приложение должно быть реализовано на flutter и код должен быть опубликован на сервисе github. по UI ограничений нет. Плюсом будут считаться наличие тестов и использования менеджера состояния bloc или riverpod
+![Alt text](screenshots/1.png)
+**Использованные пакеты**
+- bloc
+- cached_network_image
+- cupertino_icons
+- dart_rss
+- flutter_bloc
+- http
+- provider
+- responsive_sizer
+- url_launcher
