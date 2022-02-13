@@ -1,0 +1,38 @@
+name: rss_news
+description: Flutter app displaying news using RSS and BLoC.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.0 <3.0.0"
+
+dependencies:
+  bloc: ^8.0.2
+  cached_network_image: ^3.2.0
+  cupertino_icons: ^1.0.2
+  dart_rss: ^2.0.1
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.0.1
+  http: ^0.13.4
+  provider: ^6.0.2
+  responsive_sizer: ^3.0.5+1
+  url_launcher: ^6.0.20
+
+dev_dependencies:
+  flutter_lints: ^1.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/noimage.png
+  fonts:
+    - family: Rubik
+      fonts:
+        - asset: assets/fonts/Rubik-Regular.ttf
+        - asset: assets/fonts/Rubik-Bold.ttf
+          weight: 700
