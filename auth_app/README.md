@@ -1,16 +1,19 @@
-# auth_app
+### Написать приложение “Авторизация”. Пользователь должен иметь возможность авторизоваться (выполнить вход или регистрацию в сервисе). После успешной авторизации показываем пользователю экран с картинкой №1. Если “что-то пошло не так” и авторизоваться не удалось, то уведомляем пользователя о возникшей ошибке показываем экран с картинкой №2.
+![Alt text](screenshot/screenshot.png)
+Приложения:
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+	Картинка №1 “Успешная авторизация” https://skr.sh/sDdxnoyYOGB
+	Картинка №2 “Ошибка” https://skr.sh/sDdzJXaVrly
+ 
+**Использованные пакеты**
+- bloc
+- flutter_bloc
+- cached_network_image
+- hive
+- hive_flutter
+- equatable
+- loading_animation_widget
+- responsive_sizer
+- skeletons
+- page_transition
+- shared_preferences
