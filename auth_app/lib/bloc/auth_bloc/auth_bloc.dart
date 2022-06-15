@@ -2,6 +2,7 @@ import 'package:auth_app/model/user.dart';
 import 'package:auth_app/service/authentication.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -22,6 +23,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(AuthLoading());
     final bool exists = _auth.authenticateUser(event.username, event.password);
     if (exists) {
+      final prefs = await SharedPreferences.getInstance();
+      prefs.setBool("signed_in", true);
+      prefs.setString("username", event.username);
+      prefs.setString("password", event.password);
       emit(LoginSuccess(User(event.username, event.password)));
     } else {
       emit(AuthInitial(error: "User doesn't exist or wrong password"));
@@ -34,6 +39,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         await _auth.createUser(event.username, event.password);
     switch (result) {
       case Result.success:
+        final prefs = await SharedPreferences.getInstance();
+        prefs.setBool("signed_in", true);
+        prefs.setString("username", event.username);
+        prefs.setString("password", event.password);
         emit(LoginSuccess(User(event.username, event.password)));
         break;
       case Result.failure:
@@ -46,8 +55,21 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   Future<void> _onInitServiceEvent(InitServiceEvent event, Emitter emit) async {
+    emit(AuthLoading());
     await _auth.init();
-    emit(AuthInitial());
+    final prefs = await SharedPreferences.getInstance();
+
+    if (prefs.getBool("signed_in") ?? false) {
+      String username = prefs.getString("username")!;
+      String password = prefs.getString("password")!;
+
+      final bool exists = _auth.authenticateUser(username, password);
+      if (exists) {
+        emit(LoginSuccess(User(username, password)));
+      }
+    } else {
+      emit(AuthInitial());
+    }
   }
 
   Future<void> _onChangePassword(ChangePassword event, Emitter emit) async {
@@ -55,6 +77,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(AuthLoading());
     if (state is LoginSuccess) {
       await _auth.changePassword(state.user.username, event.newPassword);
+      final prefs = await SharedPreferences.getInstance();
+      prefs.setString("password", event.newPassword);
       emit(LoginSuccess(User(state.user.username, event.newPassword)));
     }
   }
@@ -71,6 +95,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             await _auth.changeUsername(event.newUsername, state.user.username);
         switch (res) {
           case Result.success:
+            final prefs = await SharedPreferences.getInstance();
+            prefs.setString("username", event.newUsername);
             emit(LoginSuccess(User(event.newUsername, state.user.password)));
             break;
           case Result.failure:
@@ -85,6 +111,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   Future<void> _onLogout(Logout event, Emitter emit) async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.clear();
     emit(AuthInitial());
   }
 }

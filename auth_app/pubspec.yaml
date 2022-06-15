@@ -24,6 +24,7 @@ dependencies:
   cached_network_image: ^3.2.1
   skeletons: ^0.0.3
   page_transition: ^2.0.5
+  shared_preferences: ^2.0.15
   
 
 dev_dependencies:
