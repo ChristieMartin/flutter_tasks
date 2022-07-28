@@ -1,0 +1,44 @@
+name: cached_fetched_users
+description: A new Flutter project.
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  auto_route: ^4.2.1
+  cupertino_icons: ^1.0.2
+  responsive_sizer: ^3.1.0
+  flutter_bloc: ^8.0.1
+  bloc: ^8.0.3
+  http: ^0.13.4
+  loading_animation_widget: ^1.2.0+2
+  cached_network_image: ^3.2.1
+  carousel_slider: ^4.1.1
+  build_runner: ^2.2.0
+  freezed_annotation: ^2.1.0
+  shared_preferences: ^2.0.15
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  auto_route_generator: ^4.2.0
+  lint: ^1.8.2
+  freezed: ^2.1.0+1
+  json_serializable: 6.3.1
+  
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: Core Sans
+      fonts:
+        - asset: "assets/fonts/Core Sans NR W01 SC 45 Regular.ttf"
