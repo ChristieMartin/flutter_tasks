@@ -1,4 +1,6 @@
-Используя сервис https://jsonplaceholder.typicode.com/  
+Скриншоты приложения можно найти в папке screenshots
+
+Используя сервис https://jsonplaceholder.typicode.com/   
 реализовать псевдо-приложение  
 Список экранов:
 
